@@ -53,7 +53,7 @@ const MainNav = ({ className, isScrolled, ...props }: MainNavProps) => {
             key={route.href}
             href={route.href}
             className={cn(
-              "text-base font-medium transition-colors hover:text-primary",
+              "text-base font-medium transition-colors hover:text-primary hover:dark:text-gray-100",
               route.active
                 ? isScrolled
                   ? "text-hero font-bold"

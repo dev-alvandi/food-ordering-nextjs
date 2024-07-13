@@ -83,7 +83,7 @@ const MenuPageContent = ({ products }: MenuPageContentProps) => {
       </Box>
 
       <div className="grid grid-col-2 lg:grid-cols-3 w-full h-full gap-4 gap-y-24">
-        {products.length > 0 ? (
+        {products && products.length > 0 ? (
           <Fragment>
             {products.map((prod) => (
               <PopularContent key={prod.id} data={prod} />

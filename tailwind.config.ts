@@ -10,6 +10,12 @@ const config = {
   ],
   prefix: "",
   theme: {
+    keyframes: {
+      spin: {
+        "0%": { transform: "rotate(0deg)" },
+        "100%": { transform: "rotate(360deg)" },
+      },
+    },
     container: {
       center: true,
       padding: "2rem",

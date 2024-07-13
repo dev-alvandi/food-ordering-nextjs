@@ -38,21 +38,22 @@ const CategoryFilters = ({ categories }: CategoryFiltersProps) => {
         Category
       </h2>
       <Box className="flex-col gap-2 mt-2">
-        {categories.map((category) => (
-          <div
-            key={category.id}
-            className={cn(
-              "text-sm font-semibold text-neutral-500 flex items-center gap-2",
-              category.name === searchParams.get("category") && "text-hero"
-            )}
-            onClick={handleCategoryClick.bind(null, category.name)}
-          >
-            {category.name}
-            {category.name === searchParams.get("category") && (
-              <Check className="w-5 h-5 text-hero" />
-            )}
-          </div>
-        ))}
+        {categories &&
+          categories.map((category) => (
+            <div
+              key={category.id}
+              className={cn(
+                "text-sm font-semibold text-neutral-500 flex items-center gap-2",
+                category.name === searchParams.get("category") && "text-hero"
+              )}
+              onClick={handleCategoryClick.bind(null, category.name)}
+            >
+              {category.name}
+              {category.name === searchParams.get("category") && (
+                <Check className="w-5 h-5 text-hero" />
+              )}
+            </div>
+          ))}
       </Box>
     </Box>
   );

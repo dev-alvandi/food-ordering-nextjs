@@ -15,7 +15,7 @@ import {
 // };
 
 export default authMiddleware({
-  publicRoutes: ["/", "/menu", "/contact"],
+  publicRoutes: ["/", "/menu", "/about", "/contact"],
 });
 
 export const config = {

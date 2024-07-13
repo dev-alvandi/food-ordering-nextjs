@@ -38,21 +38,22 @@ const SizeFilters = ({ sizes }: SizeFiltersProps) => {
         Size
       </h2>
       <Box className="flex-col gap-2 mt-2">
-        {sizes.map((size) => (
-          <div
-            key={size.id}
-            className={cn(
-              "text-sm font-semibold text-neutral-500 flex items-center gap-2",
-              size.name === searchParams.get("size") && "text-hero"
-            )}
-            onClick={handleSizeClick.bind(null, size.name)}
-          >
-            {size.name} ({size.value})
-            {size.name === searchParams.get("size") && (
-              <Check className="w-5 h-5 text-hero" />
-            )}
-          </div>
-        ))}
+        {sizes &&
+          sizes.map((size) => (
+            <div
+              key={size.id}
+              className={cn(
+                "text-sm font-semibold text-neutral-500 flex items-center gap-2",
+                size.name === searchParams.get("size") && "text-hero"
+              )}
+              onClick={handleSizeClick.bind(null, size.name)}
+            >
+              {size.name} ({size.value})
+              {size.name === searchParams.get("size") && (
+                <Check className="w-5 h-5 text-hero" />
+              )}
+            </div>
+          ))}
       </Box>
     </Box>
   );

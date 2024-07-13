@@ -38,21 +38,22 @@ const CuisineFilters = ({ cuisines }: CuisineFiltersProps) => {
         Cuisine
       </h2>
       <Box className="flex-col gap-2 mt-2">
-        {cuisines.map((cuisine) => (
-          <div
-            key={cuisine.id}
-            className={cn(
-              "text-sm font-semibold text-neutral-500 flex items-center gap-2",
-              cuisine.name === searchParams.get("cuisine") && "text-hero"
-            )}
-            onClick={handleCuisineClick.bind(null, cuisine.name)}
-          >
-            {cuisine.name}
-            {cuisine.name === searchParams.get("cuisine") && (
-              <Check className="w-5 h-5 text-hero" />
-            )}
-          </div>
-        ))}
+        {cuisines &&
+          cuisines.map((cuisine) => (
+            <div
+              key={cuisine.id}
+              className={cn(
+                "text-sm font-semibold text-neutral-500 flex items-center gap-2",
+                cuisine.name === searchParams.get("cuisine") && "text-hero"
+              )}
+              onClick={handleCuisineClick.bind(null, cuisine.name)}
+            >
+              {cuisine.name}
+              {cuisine.name === searchParams.get("cuisine") && (
+                <Check className="w-5 h-5 text-hero" />
+              )}
+            </div>
+          ))}
       </Box>
     </Box>
   );

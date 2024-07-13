@@ -8,6 +8,7 @@ import getProducts, { Query } from "@/actions/get-products";
 import PopularContent from "@/components/popular-content";
 import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { FileHeart, Salad, Truck } from "lucide-react";
+import HeroImageSpinner from "@/components/hero-image-spinner";
 
 export const revalidate = 0; // stops recatching the page over and over
 
@@ -56,24 +57,31 @@ const HomePage = async () => {
 
         <div className="">
           <div className="w-full relative h-[35rem] flex items-center justify-center">
-            <Image
+            {/* <Image
               src={"/img/Food.png"}
               alt="Hero Food"
               fill
               objectFit="contain"
               className="w-full h-full absolute"
-            />
+            /> */}
+            <HeroImageSpinner />
           </div>
         </div>
       </section>
 
       {/* Popular section */}
 
-      <section className="grid grid-cols-1 md:grid-cols-4 py-12 my-6 gap-6 gap-y-20">
-        {products.slice(0, 4).map((prod) => (
-          <PopularContent key={prod.id} data={prod} />
-        ))}
-      </section>
+      {products ? (
+        <section className="grid grid-cols-1 md:grid-cols-4 py-12 my-6 gap-6 gap-y-20">
+          {products.slice(0, 4).map((prod) => (
+            <PopularContent key={prod.id} data={prod} />
+          ))}
+        </section>
+      ) : (
+        <div className="w-full text-center text-xl font-semibold">
+          No product found yet.
+        </div>
+      )}
 
       {/* Why Choose us section */}
       <section className="flex flex-col items-center justify-center py-12 my-4">
