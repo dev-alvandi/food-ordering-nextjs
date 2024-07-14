@@ -152,7 +152,7 @@ const MobileNavbar = ({
           <MenuIcon />
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerHeader>
+          <DrawerHeader className="flex flex-col items-center justify-between gap-3 mb-4">
             <DrawerTitle>Menu</DrawerTitle>
             <DrawerDescription>Navigate throgh manu items</DrawerDescription>
           </DrawerHeader>

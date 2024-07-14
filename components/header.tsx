@@ -48,7 +48,7 @@ const Header = ({ userId }: HeaderProps) => {
         >
           <Link
             href={"/"}
-            className="text-lg uppercase flex gap-x-2 font-bold text-neutral-700 dark:text-white md:text-xl justify-start items-center"
+            className="text-lg uppercase flex gap-x-2 font-bold md:text-neutral-700 dark:text-white md:text-xl justify-start items-center"
           >
             {process.env.NEXT_PUBLIC_APP_NAME}
           </Link>

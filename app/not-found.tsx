@@ -11,10 +11,10 @@ const NotFoundPage = () => {
   }, []);
 
   return (
-    <Container className="h-[65vh] flex items-center justify-center">
+    <Container className="h-[65vh] flex items-center justify-center px-4">
       <div>
-        <span className="capitalize font-semibold">{page}</span> page will not
-        be contructed since its content would be dummy
+        <span className="capitalize font-semibold">{page}</span> page not found.
+        Please use the navigation bar to navigate through pages!
       </div>
     </Container>
   );

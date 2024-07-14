@@ -17,7 +17,7 @@ const OrdersContent = ({ orders }: OrdersContentProps) => {
   }
 
   return (
-    <div className="w-full rounded-lg p-4 flex flex-col items-center justify-start gap-4 mt-4">
+    <div className="w-full rounded-lg p-4 flex flex-col items-center justify-start gap-4 mt-4 bg-white dark:bg-black">
       {orders.map((order) => (
         <OrderItem key={order.id} order={order} />
       ))}

@@ -27,7 +27,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn("bg-background antialiased", urbanist.variable)}>
+        <body
+          className={cn(
+            "bg-background antialiased relative",
+            urbanist.variable
+          )}
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
