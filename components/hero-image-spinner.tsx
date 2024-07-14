@@ -56,7 +56,7 @@ const images: ImageDataProps[] = [
 const HeroImageSpinner = () => {
   return (
     <div className="w-full h-full relative">
-      <div className="w-full h-full relative animate-[spin_15s_linear_reverse_infinite]">
+      {/* <div className="w-full h-full relative animate-[spin_15s_linear_reverse_infinite]">
         {images.map((img) => (
           <div
             key={img.imageUrl}
@@ -70,11 +70,10 @@ const HeroImageSpinner = () => {
               alt={img.alt}
               className="w-full h-full object-contain"
               fill
-              sizes=""
             />
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div className="w-[70%] h-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
         <Image

@@ -143,26 +143,26 @@ const HomePage = async () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full my-6 mt-20">
           <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-center h-96 md:h-[35rem] bg-hero/30 ">
             <Image
+              className="w-full h-full object-contain"
               src={"/img/chef1.png"}
               alt="Chef 1"
               fill
-              className="w-full h-full object-contain"
             />
           </Card>
           <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-center h-96 md:h-[35rem] bg-hero/30 mt-20">
             <Image
+              className="w-full h-full object-contain"
               src={"/img/chef2.png"}
               alt="Chef 2"
               fill
-              className="w-full h-full object-contain"
             />
           </Card>
           <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-center h-96 md:h-[35rem] bg-hero/30 ">
             <Image
+              className="w-full h-full object-contain"
               src={"/img/chef3.png"}
               alt="Chef 3"
               fill
-              className="w-full h-full object-contain"
             />
           </Card>
         </div>

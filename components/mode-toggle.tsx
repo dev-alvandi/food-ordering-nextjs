@@ -21,7 +21,7 @@ export const ModeToggle = () => {
         <Button
           variant="outline"
           size="icon"
-          className="border-none outline-none"
+          className="ml-4 border-none outline-none"
         >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
