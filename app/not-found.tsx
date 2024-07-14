@@ -14,7 +14,7 @@ const NotFoundPage = () => {
     <Container className="h-[65vh] flex items-center justify-center">
       <div>
         <span className="capitalize font-semibold">{page}</span> page will not
-        be contructed since it contains dummy data
+        be contructed since its content would be dummy
       </div>
     </Container>
   );

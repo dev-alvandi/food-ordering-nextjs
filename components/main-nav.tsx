@@ -159,7 +159,7 @@ const MobileNavbar = ({
           <div className="w-full">
             <MobileNavbarItems
               routes={routes}
-              className="w-full text-white"
+              className="w-full dark:text-white"
               onClick={() => setOpen(false)}
             />
           </div>
@@ -186,7 +186,7 @@ const MobileNavbarItems = ({
           href={route.href}
           onClick={onClick}
           className={cn(
-            "text-base font-medium transition-colors hover:text-primary hover:dark:text-gray-400 flex items-center justify-center rounded-md py-4 mx-4",
+            "text-base font-medium transition-colors text-black hover:text-gray-500 hover:dark:text-gray-400 flex items-center justify-center rounded-md py-4 mx-4",
             route.active && "text-hero dark:text-hero",
             className
           )}
