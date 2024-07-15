@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="">
       <Container className="w-full">
         <div className="w-full bg-hero/30 grid grid-cols-2 md:grid-cols-4 px-4 md:px-12 py-8">
-          <div className="flex flex-col items-start justify-start gap-3">
+          <div className="flex flex-col items-start justify-start gap-3 py-4 md:py-0 px-3 md:px-0">
             <h2 className="text-3xl font-semibold">Menu</h2>
             <p className="text-neutral-500 dark:text-neutral-100 text-sm">
               Home
@@ -25,7 +25,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-start gap-3">
+          <div className="flex flex-col items-start justify-start gap-3 py-4 md:py-0 px-3 md:px-0">
             <h2 className="text-3xl font-semibold">Help</h2>
             <p className="text-neutral-500 dark:text-neutral-100 text-sm">
               Privacy
@@ -38,7 +38,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-start gap-3">
+          <div className="flex flex-col items-start justify-start gap-3 py-4 md:py-0 px-3 md:px-0">
             <h2 className="text-3xl font-semibold">Contact</h2>
             <p className="text-neutral-500 dark:text-neutral-100 text-sm">
               +46 000 00 00 00
@@ -51,7 +51,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-start gap-3">
+          <div className="flex flex-col items-start justify-start gap-3 py-4 md:py-0 px-3 md:px-0">
             <h2 className="text-3xl font-semibold dark:text-neutral-100">
               Subscribe Our Newsletter
             </h2>
