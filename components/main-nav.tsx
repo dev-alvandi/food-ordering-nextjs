@@ -16,6 +16,9 @@ import {
 } from "@/components/ui/drawer";
 import { MenuIcon } from "lucide-react";
 import useScrollBehavior from "@/hooks/use-scroll-behavior";
+import { UserButton } from "@clerk/nextjs";
+import CartActionButton from "./cart-action";
+import { Button } from "./ui/button";
 
 type NavbarRoutes = {
   href: string;
@@ -25,15 +28,17 @@ type NavbarRoutes = {
 
 interface MainNavProps extends React.HTMLAttributes<HTMLElement> {
   isScrolled: boolean;
+  userId: string | null;
 }
 
 interface DifferentMediaQueriesNavbarTypes
   extends React.HTMLAttributes<HTMLElement> {
   isScrolled: boolean;
   routes: NavbarRoutes;
+  userId: string | null;
 }
 
-const MainNav = ({ className, isScrolled, ...props }: MainNavProps) => {
+const MainNav = ({ className, isScrolled, userId, ...props }: MainNavProps) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const pathname = usePathname();
@@ -71,12 +76,14 @@ const MainNav = ({ className, isScrolled, ...props }: MainNavProps) => {
       isScrolled={isScrolled}
       routes={routes}
       className={className}
+      userId={userId}
     />
   ) : (
     <MobileNavbar
       isScrolled={isScrolled}
       routes={routes}
       className={className}
+      userId={userId}
     />
   );
 };
@@ -85,6 +92,7 @@ const DesktopNavbar = ({
   isScrolled,
   className,
   routes,
+  userId,
   ...props
 }: DifferentMediaQueriesNavbarTypes) => {
   return (
@@ -96,6 +104,29 @@ const DesktopNavbar = ({
         )}
       >
         <DesktopNavbarItems routes={routes} isScrolled={isScrolled} />
+
+        <div className={cn("flex justify-end")}>
+          {userId ? (
+            <Fragment>
+              <div className="flex items-center space-x-4">
+                <UserButton afterSignOutUrl="/" />
+              </div>
+
+              <CartActionButton />
+            </Fragment>
+          ) : (
+            <div className="flex items-center space-x-2 ml-4 text-black dark:text-white">
+              <Link href={"/sign-in"}>
+                <Button variant="outline">Sign in</Button>
+              </Link>
+              <Link href={"/sign-up"}>
+                <Button className="bg-green-400 text-black hover:bg-green-500">
+                  Sign up
+                </Button>
+              </Link>
+            </div>
+          )}
+        </div>
       </nav>
     </div>
   );
@@ -140,6 +171,7 @@ const MobileNavbar = ({
   isScrolled,
   className,
   routes,
+  userId,
   ...props
 }: DifferentMediaQueriesNavbarTypes) => {
   const [open, setOpen] = useState(false);
@@ -157,12 +189,41 @@ const MobileNavbar = ({
             <DrawerTitle>Menu</DrawerTitle>
             <DrawerDescription>Navigate through manu items</DrawerDescription>
           </DrawerHeader>
-          <div className="w-full">
-            <MobileNavbarItems
-              routes={routes}
-              className="w-full dark:text-white"
-              onClick={() => setOpen(false)}
-            />
+          <MobileNavbarItems
+            routes={routes}
+            className="w-full dark:text-white"
+            onClick={() => setOpen(false)}
+          />
+          <div className={cn("flex flex-col items-center py-4")}>
+            {userId ? (
+              <Fragment>
+                <div className="flex z-40 items-center space-x-4 p-4">
+                  <UserButton
+                    afterSignOutUrl="/"
+                    appearance={{
+                      elements: {
+                        userButtonPopoverCard: { pointerEvents: "initial" },
+                      },
+                    }}
+                  />
+                </div>
+
+                <CartActionButton />
+              </Fragment>
+            ) : (
+              <div className="flex flex-col items-center gap-3 text-black dark:text-white w-full px-4">
+                <Link className="w-full" href={"/sign-in"}>
+                  <Button className="w-full" variant="outline">
+                    Sign in
+                  </Button>
+                </Link>
+                <Link className="w-full" href={"/sign-up"}>
+                  <Button className="w-full bg-green-400 text-black hover:bg-green-500">
+                    Sign up
+                  </Button>
+                </Link>
+              </div>
+            )}
           </div>
         </DrawerContent>
       </Drawer>

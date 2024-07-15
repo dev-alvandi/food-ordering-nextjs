@@ -35,7 +35,7 @@ const Header = ({ userId }: HeaderProps) => {
   return (
     <header
       className={cn(
-        "fixed w-full z-50 transition bg-transparent",
+        "fixed w-full z-40 transition bg-transparent",
         isScrolled && "left-0 top-0 bg-white dark:bg-black shadow-lg"
       )}
     >
@@ -43,7 +43,7 @@ const Header = ({ userId }: HeaderProps) => {
         <div
           className={cn(
             "h-16 px-4 sm:p-6 lg:px-12 flex items-center",
-            !isDesktop && "grid grid-cols-3 grid-rows-1"
+            !isDesktop && "flex items-center justify-between mx-6"
           )}
         >
           <Link
@@ -54,9 +54,13 @@ const Header = ({ userId }: HeaderProps) => {
           </Link>
 
           {/* Main nav bar */}
-          <MainNav className="justify-center" isScrolled={isScrolled} />
+          <MainNav
+            className="justify-end"
+            isScrolled={isScrolled}
+            userId={userId}
+          />
 
-          <div className={cn("flex justify-end")}>
+          {/* <div className={cn("flex justify-end")}>
             {userId ? (
               <Fragment>
                 <div className="ml-4 flex items-center space-x-4">
@@ -77,7 +81,7 @@ const Header = ({ userId }: HeaderProps) => {
                 </Link>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </Container>
     </header>

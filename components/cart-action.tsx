@@ -21,7 +21,7 @@ const CartActionButton = () => {
   }
 
   return (
-    <div className="ml-4 flex justify-center items-center gap-x-4">
+    <div className="flex justify-center items-center gap-x-4 md:mx-4">
       <Button
         className="rounded-full"
         variant={"outline"}
