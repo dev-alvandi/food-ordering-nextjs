@@ -131,6 +131,7 @@ const DesktopNavbarItems = ({
           {route.label}
         </Link>
       ))}
+      <ModeToggle />
     </Fragment>
   );
 };
@@ -154,7 +155,7 @@ const MobileNavbar = ({
         <DrawerContent>
           <DrawerHeader className="flex flex-col items-center justify-between gap-3 mb-4">
             <DrawerTitle>Menu</DrawerTitle>
-            <DrawerDescription>Navigate throgh manu items</DrawerDescription>
+            <DrawerDescription>Navigate through manu items</DrawerDescription>
           </DrawerHeader>
           <div className="w-full">
             <MobileNavbarItems
@@ -179,7 +180,7 @@ const MobileNavbarItems = ({
   className?: string;
 }) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-4 mx-4">
+    <div className="flex flex-col justify-center items-center gap-4 mx-4 ">
       {routes.map((route) => (
         <Link
           key={route.href}
@@ -194,6 +195,8 @@ const MobileNavbarItems = ({
           {route.label}
         </Link>
       ))}
+
+      <ModeToggle />
     </div>
   );
 };

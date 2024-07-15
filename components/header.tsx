@@ -57,7 +57,6 @@ const Header = ({ userId }: HeaderProps) => {
           <MainNav className="justify-center" isScrolled={isScrolled} />
 
           <div className={cn("flex justify-end")}>
-            <ModeToggle />
             {userId ? (
               <Fragment>
                 <div className="ml-4 flex items-center space-x-4">
