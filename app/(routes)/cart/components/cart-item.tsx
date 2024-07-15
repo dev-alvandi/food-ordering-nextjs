@@ -26,7 +26,7 @@ const CartItem = ({ item }: CartItemProps) => {
   return (
     <Box
       key={"container-Box"}
-      className="flex items-center gap-4 border border-gray-200 dark:border-gray-800 p-3 rounded-lg"
+      className="flex flex-col md:flex-row items-center gap-4 border border-gray-200 dark:border-gray-800 p-3 rounded-lg"
     >
       <div className="aspect-square w-24 min-w-24 h-24 min-h-24 rounded-md bg-gray-100 dark:bg-gray-600 flex items-center justify-center relative overflow-hidden">
         <Image
@@ -38,7 +38,7 @@ const CartItem = ({ item }: CartItemProps) => {
       </div>
 
       <div>
-        <h2 className="w-full min-w-44 whitespace-nowrap truncate font-semibold text-2xl text-neutral-700 dark:text-neutral-300">
+        <h2 className="w-full flex justify-center md:justify-start min-w-44 whitespace-nowrap truncate font-semibold text-2xl text-neutral-700 dark:text-neutral-300">
           {item.name}
         </h2>
         <div className="w-full flex justify-start items-center gap-2 flex-wrap mt-4">
