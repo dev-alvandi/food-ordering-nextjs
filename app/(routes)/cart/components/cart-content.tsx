@@ -61,7 +61,7 @@ const CartContent = ({ userId }: CartContentProps) => {
         )}
       </div>
 
-      <div className="w-full lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-8">
+      <div className="w-full lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-8 bg-white dark:bg-black p-4">
         <div className="col-span-8 relative">
           {cart.items.length === 0 && (
             <div className="w-full items-center flex justify-center">
