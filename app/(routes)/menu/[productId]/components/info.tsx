@@ -23,6 +23,7 @@ const Info = ({ product }: InfoProps) => {
   const cart = useCart();
 
   const handleQty = (num: number) => {
+    console.log(1);
     setQty(num);
     cart.updateItemQuantity(product.id, num);
   };
@@ -83,7 +84,7 @@ const Info = ({ product }: InfoProps) => {
         </div>
         <div className="col-span-3 space-y-8">
           <p className="text-xl font-bold text-black dark:text-white">
-            SEK {product.price}
+            SEK {product.price * (qty ?? 1)}
           </p>
           <div className="flex items-center gap-2">
             {[1, 2, 3, 4, 5].map((num) => (
