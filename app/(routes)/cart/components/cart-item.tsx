@@ -2,6 +2,7 @@
 
 import Box from "@/components/box";
 import { Button } from "@/components/ui/button";
+import { numberOfAllowedProductsToChoose } from "@/constants/constants";
 import useCart from "@/hooks/use-cart";
 import { cn } from "@/lib/utils";
 import { Product } from "@/types-db";
@@ -70,10 +71,10 @@ const CartItem = ({ item }: CartItemProps) => {
 
       <Box
         key={"quantity-Box"}
-        className="flex items-center justify-center h-full"
+        className="flex items-center justify-center h-full gap-"
       >
-        <div className="flex items-center gap-2">
-          {[1, 2, 3, 4, 5].map((num) => (
+        <div className="flex flex-wrap items-center gap-2">
+          {numberOfAllowedProductsToChoose.map((num) => (
             <div
               key={num}
               className={cn(

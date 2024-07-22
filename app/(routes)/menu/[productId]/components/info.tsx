@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { numberOfAllowedProductsToChoose } from "@/constants/constants";
 import useCart from "@/hooks/use-cart";
 import { cn } from "@/lib/utils";
 import { Product } from "@/types-db";
@@ -78,7 +79,7 @@ const Info = ({ product }: InfoProps) => {
           <div className="text-lg font-semibold text-neutral-700 dark:text-neutral-200">
             Price
           </div>
-          <div className="text-lg font-semibold text-neutral-700 dark:text-neutral-200">
+          <div className=" text-lg font-semibold text-neutral-700 dark:text-neutral-200">
             Serves
           </div>
         </div>
@@ -86,8 +87,8 @@ const Info = ({ product }: InfoProps) => {
           <p className="text-xl font-bold text-black dark:text-white">
             SEK {product.price * (qty ?? 1)}
           </p>
-          <div className="flex items-center gap-2">
-            {[1, 2, 3, 4, 5].map((num) => (
+          <div className="flex flex-wrap items-center gap-2">
+            {numberOfAllowedProductsToChoose.map((num) => (
               <div
                 key={num}
                 className={cn(

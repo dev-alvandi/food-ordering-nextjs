@@ -40,12 +40,9 @@ const useCart = create(
       },
 
       updateItemQuantity: (id: string, qty: number) => {
-        console.log(id, qty);
         const updatedItems = get().items.map((item) =>
           item.id === id ? { ...item, qty } : item
         );
-
-        console.log(updatedItems);
 
         set({ items: updatedItems });
       },
