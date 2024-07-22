@@ -27,7 +27,7 @@ const Gallery = ({ images }: GalleryProps) => {
         </TabsContent>
       ))}
 
-      <div className="flex items-center justify-center w-full md:h-auto px-6 md:px-0">
+      <div className="flex items-center justify-center w-full md:h-auto px-12 md:px-0">
         <Carousel
           plugins={[
             Autoplay({
