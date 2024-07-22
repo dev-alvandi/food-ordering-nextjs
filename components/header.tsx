@@ -3,12 +3,8 @@
 import { cn } from "@/lib/utils";
 import Container from "./container";
 import Link from "next/link";
-import { UserButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
 import MainNav from "./main-nav";
-import { Fragment, useEffect, useState } from "react";
-import ModeToggle from "./mode-toggle";
-import CartActionButton from "./cart-action";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 interface HeaderProps {
@@ -59,29 +55,6 @@ const Header = ({ userId }: HeaderProps) => {
             isScrolled={isScrolled}
             userId={userId}
           />
-
-          {/* <div className={cn("flex justify-end")}>
-            {userId ? (
-              <Fragment>
-                <div className="ml-4 flex items-center space-x-4">
-                  <UserButton afterSignOutUrl="/" />
-                </div>
-
-                <CartActionButton />
-              </Fragment>
-            ) : (
-              <div className="flex items-center space-x-2 ml-4 text-black dark:text-white">
-                <Link href={"/sign-in"}>
-                  <Button variant="outline">Sign in</Button>
-                </Link>
-                <Link href={"/sign-up"}>
-                  <Button className="bg-green-400 text-black hover:bg-green-500">
-                    Sign up
-                  </Button>
-                </Link>
-              </div>
-            )}
-          </div> */}
         </div>
       </Container>
     </header>

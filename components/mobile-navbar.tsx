@@ -65,7 +65,7 @@ const MobileNavbar = ({
               <Fragment>
                 <div className="flex z-40 items-center space-x-4 p-4">
                   <UserButton
-                    afterSignOutUrl="/"
+                    afterSignOutUrl="/sign-in"
                     appearance={{
                       elements: {
                         userButtonPopoverCard: { pointerEvents: "initial" },
