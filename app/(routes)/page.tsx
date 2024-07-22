@@ -149,7 +149,7 @@ const HomePage = async () => {
               fill
             />
           </Card>
-          <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-center h-96 md:h-[35rem] bg-hero/30 mt-20">
+          <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-center h-96 md:h-[35rem] bg-hero/30 md:mt-20">
             <Image
               className="w-full h-full object-contain"
               src={"/img/chef2.png"}

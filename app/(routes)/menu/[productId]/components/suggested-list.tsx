@@ -18,7 +18,7 @@ const SuggestedList = ({ products }: SuggestedListProps) => {
         Related Products
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-20 md:gap-x-4 md:gap-y-24 my-6 py-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-20 md:gap-x-4 md:gap-y-24 my-6 py-12">
         {products
           .filter((prod) => prod.id !== productId)
           .map((suggestedProd) => (

@@ -32,7 +32,7 @@ const Info = ({ product }: InfoProps) => {
   };
 
   return (
-    <div>
+    <div className="bg-white dark:bg-black p-4 sm:rounded-lg">
       <h1 className="text-3xl font-bold text-neutral-800 dark:text-neutral-200">
         {product.name}
       </h1>
