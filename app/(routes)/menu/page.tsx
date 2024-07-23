@@ -39,7 +39,7 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
   });
 
   return (
-    <Container className="px-4 md:px-12">
+    <Container className="px-4 pt-6 md:px-12">
       <div className="grid grid-cols-1 md:grid-cols-12 py-12 gap-2">
         <div className="hidden md:block col-span-2 border-r top-24">
           <FilterContainer>
