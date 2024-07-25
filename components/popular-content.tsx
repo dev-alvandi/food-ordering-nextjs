@@ -8,17 +8,25 @@ import { Button } from "@/components/ui/button";
 import { HeartCrack, HeartIcon, ShoppingCartIcon } from "lucide-react";
 import { useState } from "react";
 import useCart from "@/hooks/use-cart";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@clerk/nextjs";
 
 interface PopularContentProps {
   data: Product;
 }
 
 const PopularContent = ({ data }: PopularContentProps) => {
+  const router = useRouter();
+  const { userId } = useAuth();
+
   const [isLiked, setIsLiked] = useState(false);
 
   const cart = useCart();
 
   const handleAddToCart = (product: Product) => {
+    if (!userId) {
+      return router.push("/sign-in");
+    }
     cart.addItem({ ...product, qty: 1 });
   };
 
